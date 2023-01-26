@@ -373,9 +373,17 @@
 .trending-item-text-bottom{
     color: #636363;
 }
+
 .footer{
     display: grid;
     grid-column: 2/3;
     grid-row: 3/4;
     background-color: #b8e2f2;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer a{
+    text-decoration: none;
+    color: #1293d5;
 }
