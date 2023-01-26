@@ -1,8 +1,3 @@
-/* @font-face {
-    font-family: Roboto;
-    src: url("../fonts/Roboto/Roboto-Regular.ttf");
-} */
-
 *{
     margin: 0;
     padding: 0;
@@ -11,10 +6,13 @@
 }
 
 .container{
+    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 5fr;
-    grid-template-rows: 20vh 78vh 2vh;
+    grid-template-rows: 180px 1fr 30px;
 }
+
+/* Nav */
 
 .nav{
     display: grid;
@@ -23,6 +21,7 @@
     background-color: #1293d5;
     grid-template-rows: 2fr 1fr;
     color: #fff;
+    padding-right: 0.5rem;
 }
 
 .nav-content{
@@ -86,12 +85,16 @@
 .nav-body-text{
     font-weight: 600;
 }
+
+/* Header */
+
 .header{
     display: grid;
     grid-column: 2/3;
     grid-row: 1/2;
     background-color: #b8e2f2;
     grid-template-rows: 1fr 2fr;
+    max-height: 20vh;
 }
 
 .header-top{
@@ -100,6 +103,8 @@
     grid-template-columns: 2fr 1fr;
     padding-top: 1rem;
 }
+
+/* Search bar */
 
 .search-bar{
     grid-column: 1/2;
@@ -118,7 +123,10 @@
     width: 35rem;
     background-color: #e9eefe;
     border-radius: 1rem;
+    cursor: text;
 }
+
+/* Noti bar */
 
 .noti-bar{
     grid-column: 2/3;
@@ -142,6 +150,9 @@
     margin-left: 1.5rem;
     margin-right: 3rem;
 }
+
+/* User info */
+
 .header-bottom{
     grid-row: 2/3;
     display: grid;
@@ -155,7 +166,6 @@
     align-items: center;
     grid-auto-flow: column;
     grid-auto-columns: 8.5rem;
-    /* align-content: center; */
 }
 
 .user-info-icon{
@@ -178,6 +188,8 @@
     font-weight: 600;
     font-size: 1.5rem;
 }
+
+/* Header buttons */
 
 .button-function{
     grid-column: 2/3;
@@ -204,14 +216,163 @@
     margin-right: 3rem;
 }
 
+/* Dashboard left */
+
 .dashboard{
     display: grid;
     grid-column: 2/3;
     grid-row: 2/3;
-    height: 78vh;
+    height: 100%;
     background-color: #e3e9f0;
+    grid-template-columns: 5fr 2fr;
 }
 
+.dashboard-left{
+    grid-column: 1/2;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 72px 1fr;
+}
+
+.project-title{
+    grid-column: 1/2;
+    grid-row: 1/2;
+    align-self: center;
+    padding-left: 1.5rem;   
+    font-weight: 500;
+}
+
+.project-container{
+    grid-column: 1/3;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-auto-flow: row;
+}
+
+.project-card{
+    height: 90%;
+    overflow: auto;
+    width: 80%;
+    background-color: #fff;
+    margin-left: 1.5rem;
+    border-radius: 0.5rem;
+    display: grid;
+    grid-template-rows: 3fr 1fr;
+    border-left: 0.5rem solid #f0b524;
+    padding: 1.5rem 1.5rem 0.25rem 1.5rem;
+    box-shadow: rgb(0 0 0 / 15%) 1.95px 1.95px 2.6px;
+}
+
+.project-card-text-title{
+    font-weight: 500;
+}
+
+.project-card-text-content{
+    font-weight: thin;
+    color: #636363;
+}
+
+.project-card-icon-list{
+    padding: 0.5rem 0;
+}
+
+.project-card-icon{
+    display: flex;
+    list-style-type: none;
+    justify-content: flex-end;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.project-card-icon > li{
+    font-size: x-large;
+    cursor: pointer;
+}
+
+/* Dashboard right */
+
+.dashboard-right{
+    grid-column: 2/3;
+    grid-row: 1/3;
+    display: grid;
+    grid-template-rows: 72px 330px 72px 330px;
+}
+
+.announcement-title{
+    grid-row: 1/2;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    align-self: center;
+}
+
+.announcement{
+    grid-row: 2/3;
+    height: 90%;
+    width: 85%;
+    min-width: 250px;
+    background-color: #fff;
+    margin: 0 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    align-items: center;
+}
+
+.announcement-item{
+    padding: 0.5rem 0;
+}
+.announcement-item:nth-child(1),
+.announcement-item:nth-child(2)
+{
+    border-bottom: 1px solid #ccc;
+}
+
+.announcement-item-title{
+    font-weight: 500;
+}
+
+.announcement-item-content{
+    color: #636363;
+}
+
+.trending-title{
+    grid-row: 3/4;
+    font-weight: 500;
+    padding-left: 1.5rem;
+    align-self: center;
+}
+
+.trending{
+    grid-row: 4/5;
+    height: 90%;
+    width: 85%;
+    min-width: 250px;
+    background-color: #fff;
+    margin: 0 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+    display: grid;
+    grid-template-rows: repeat(4, 1fr);
+    align-items: center;
+}
+
+.trending-item{
+    display: grid;
+    grid-template-columns: 1fr 3.5fr;
+    align-items: center;
+}
+
+.trending-item-image{
+    height: 3rem;
+    border-radius: 50%;
+}
+
+.trending-item-text-bottom{
+    color: #636363;
+}
 .footer{
     display: grid;
     grid-column: 2/3;
